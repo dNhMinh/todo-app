@@ -347,18 +347,6 @@ export default function App() {
     }
   };
 
-  // const toggleCompleteSelected = async () => {
-  //   try {
-  //     await Promise.all(selectedIds.map(id => {
-  //       const todo = todos.find(t => t.id === id);
-  //       return axios.put(`${API_URL}/${id}`, { ...todo, completed: !todo.completed });
-  //     }));
-  //     fetchTodos();
-  //   } catch (error) {
-  //     console.error('Bulk Toggle Error:', error);
-  //   }
-  // };
-
   const toggleCompleteSelected = async () => {
     try {
       const updates = await Promise.all(selectedIds.map(async id => {
@@ -436,3 +424,6 @@ export default function App() {
     </div>
   );
 }
+
+
+
