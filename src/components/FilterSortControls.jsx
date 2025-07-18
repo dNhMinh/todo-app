@@ -21,7 +21,7 @@ export function FilterSortControls({ filter, setFilter, sort, setSort }) {
             <button onClick={() => setFilter('incomplete')} className={`px-3 py-1 rounded ${filter === 'incomplete' ? 'bg-blue-600 text-white' : 'bg-white text-gray-800 border'}`}>Chưa hoàn thành</button>
         </div>
     <div>
-        <select value={sort} onChange={(e) => setSort(e.target.value)} className="border p-2 rounded shadow">
+        <select value={sort} onChange={(e) => setSort(e.target.value)} className="border p-2 rounded shadow bg-white text-black">
             <option value="priority">Sắp xếp theo ưu tiên</option>
             <option value="created">Sắp xếp theo ngày tạo</option>
         </select>

@@ -6,13 +6,13 @@ export function BulkEditModal({ onConfirm, onCancel }) {
   const [newPriority, setNewPriority] = useState(3);
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div className="fixed inset-0 text-black bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white p-6 rounded shadow max-w-md w-full">
-        <h2 className="text-lg font-semibold mb-4">Sửa hàng loạt</h2>
+        <h2 className="text-lg font-semibold mb-4">Sửa</h2>
         <div className="mb-4">
           <label className="block mb-1">Tiêu đề mới (bỏ trống nếu không thay đổi):</label>
           <input
-            className="w-full border p-2 rounded"
+            className="w-full bg-white border p-2 rounded"
             value={newTitle}
             onChange={(e) => setNewTitle(e.target.value)}
           />
@@ -22,7 +22,7 @@ export function BulkEditModal({ onConfirm, onCancel }) {
           <select
             value={newPriority}
             onChange={(e) => setNewPriority(parseInt(e.target.value))}
-            className="w-full border p-2 rounded"
+            className="w-full bg-white border p-2 rounded"
           >
             {[1, 2, 3, 4, 5].map(p => (
               <option key={p} value={p}>{p}</option>
