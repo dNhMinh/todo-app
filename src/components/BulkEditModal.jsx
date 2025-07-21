@@ -1,6 +1,14 @@
 // File: src/components/BulkEditModal.jsx
 import { useState } from 'react';
 
+const priorityLabels = {
+  1: 'Rất thấp',
+  2: 'Thấp',
+  3: 'Trung bình',
+  4: 'Cao',
+  5: 'Rất cao',
+};
+
 export function BulkEditModal({ onConfirm, onCancel }) {
   const [newTitle, setNewTitle] = useState('');
   const [newPriority, setNewPriority] = useState(3);
@@ -24,9 +32,14 @@ export function BulkEditModal({ onConfirm, onCancel }) {
             onChange={(e) => setNewPriority(parseInt(e.target.value))}
             className="w-full bg-white border p-2 rounded"
           >
-            {[1, 2, 3, 4, 5].map(p => (
-              <option key={p} value={p}>{p}</option>
+            {/* {[1, 2, 3, 4, 5].map(p => (
+              <option key={p} value={p}>{p}</option> */}
+            {Object.entries(priorityLabels).map(([value, label]) => (
+              <option key={value} value={value}>
+                {label}
+              </option>
             ))}
+            
           </select>
         </div>
         <div className="flex justify-end gap-2">
